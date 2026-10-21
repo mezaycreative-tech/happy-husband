@@ -11,7 +11,7 @@
 <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%231F1B56'/%3E%3Cpath d='M30 32 L44 32 L36 68 L22 68 Z' fill='%23F3A79E'/%3E%3Cpath d='M48 32 L62 32 L54 68 L40 68 Z' fill='%23EE6E64'/%3E%3Cpath d='M66 32 L80 32 L72 68 L58 68 Z' fill='%23EB4137'/%3E%3C/svg%3E">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%231F1B56'/%3E%3Cpath d='M30 32 L44 32 L36 68 L22 68 Z' fill='%23F3A79E'/%3E%3Cpath d='M48 32 L62 32 L54 68 L40 68 Z' fill='%23EE6E64'/%3E%3Cpath d='M66 32 L80 32 L72 68 L58 68 Z' fill='%23EB4137'/%3E%3C/svg%3E">
 <link rel="manifest" href="manifest.json">
-<title>Happy Marriage</title>
+<title>Happy Husband</title>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -2182,6 +2182,71 @@ document.addEventListener('keydown',function(e){
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', function(){ setTimeout(count, 2500); });
   else setTimeout(count, 2500);
+})();
+</script><style>
+/* Mezay Creative palette.
+
+   Ink #1A1F2E, tangerine #FF7A1A, paper #F7F5F0, slate #5F6675.
+   Every colour in the app came from four CSS variables, so remapping those
+   restyles the whole thing without touching a rule.
+
+   Two brand rules decide the details:
+   - tangerine is an accent, roughly 10% of a layout, never the field
+   - white on tangerine fails contrast, so buttons are tangerine with INK
+     text; tangerine text on paper fails too, so any orange text is rust. */
+:root{
+  --navy:       #1A1F2E !important;
+  --coral:      #FF7A1A !important;
+  --coral-tint: #FFA35C !important;
+  --cream:      #F7F5F0 !important;
+  --muted:      #5F6675 !important;
+  --border:     rgba(26,31,46,.14) !important;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --navy:       #F2F1EE !important;
+    --cream:      #1A1F2E !important;
+    --card:       #2C3448 !important;
+    --coral:      #FF7A1A !important;
+    --coral-tint: #FFA35C !important;
+    --muted:      #A3A9B5 !important;
+    --border:     rgba(255,255,255,.14) !important;
+  }
+}
+
+/* tangerine fill, ink text — never white on orange */
+.btn{ background:#FF7A1A !important; color:#1A1F2E !important; }
+.btn:active{ background:#C95A00 !important; }
+.btn.quiet{ background:transparent !important; color:inherit !important; }
+
+/* full-screen overlays stay ink in both schemes */
+#welcome, #lock, #quiz, #toast{ background:#1A1F2E !important; color:#fff !important; }
+
+/* the three chevrons were the Koli Shema mark */
+#appSwitch{ display:none !important; }
+</style>
+<script>
+/* Koli Shema branding out. The apps were presented as a set belonging to the
+   charity; they stand alone now, so the mark, the cross-app links and any
+   text naming it come out. */
+(function(){
+  function strip(){
+    var m = document.getElementById('appSwitch'); if (m) m.remove();
+    document.querySelectorAll('#backToApps, .back-apps').forEach(function(e){ e.remove(); });
+    document.querySelectorAll('a[href*="kolishema.github.io"]').forEach(function(a){
+      var h = a.getAttribute('href') || '';
+      if (!/happy-wife-app|HappyMarriage|HappyChildren/.test(h)) a.remove();
+    });
+    document.querySelectorAll('p,span,small,h1,h2,h3,h4,a,div').forEach(function(e){
+      if (e.children.length) return;
+      var t = (e.textContent || '').trim();
+      if (/Koli Shema/i.test(t) || /^.{0,3}Happy Relationships$/.test(t)) e.remove();
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', function(){ setTimeout(strip, 700); });
+  else setTimeout(strip, 700);
+  document.addEventListener('click', function(){ setTimeout(strip, 200); }, true);
+  setTimeout(strip, 1800);
 })();
 </script></body>
 </html>
