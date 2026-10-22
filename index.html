@@ -2302,5 +2302,22 @@ hr, .divider{ border-color:#E3E5EA !important; background:#E3E5EA !important; }
   .badge, .pill, .tag{ background:rgba(255,122,26,.18) !important; color:#FFA35C !important; }
 }
 </style>
+<style>
+/* One contrast failure here, measured across all three tabs: the sign-in
+   link on Settings at 2.91:1, where 4.5 is the floor for body text.
+   Everything else passed — this app has always been the tidier of the two
+   marriage apps, three tabs rather than seven.
+
+   Rust on paper is 7.6:1; tangerine goes back in dark mode where it passes
+   on ink. */
+.pw-link, a.signin, .signin-link, #auSub a, .au-skip{
+  color:#8A3E00 !important;
+}
+@media (prefers-color-scheme: dark){
+  .pw-link, a.signin, .signin-link, #auSub a, .au-skip{
+    color:#FF7A1A !important;
+  }
+}
+</style>
 </body>
 </html>
