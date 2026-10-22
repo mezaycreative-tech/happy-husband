@@ -7,7 +7,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Happy Marriage">
 <meta name="description" content="Two small things a day for your marriage.">
-<meta name="theme-color" content="#1F1B56">
+<meta name="theme-color" content="#1A1F2E">
 <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%231F1B56'/%3E%3Cpath d='M30 32 L44 32 L36 68 L22 68 Z' fill='%23F3A79E'/%3E%3Cpath d='M48 32 L62 32 L54 68 L40 68 Z' fill='%23EE6E64'/%3E%3Cpath d='M66 32 L80 32 L72 68 L58 68 Z' fill='%23EB4137'/%3E%3C/svg%3E">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%231F1B56'/%3E%3Cpath d='M30 32 L44 32 L36 68 L22 68 Z' fill='%23F3A79E'/%3E%3Cpath d='M48 32 L62 32 L54 68 L40 68 Z' fill='%23EE6E64'/%3E%3Cpath d='M66 32 L80 32 L72 68 L58 68 Z' fill='%23EB4137'/%3E%3C/svg%3E">
 <link rel="manifest" href="manifest.json">
@@ -17,10 +17,10 @@
 <style>
 /* Layout: one column, three tabs, full-screen detail pages pushed over a menu. */
 :root{
-  --navy:#1F1B56; --coral:#EB4137; --coral-tint:#F3A79E;
+  --navy:#1A1F2E; --coral:#FF7A1A; --coral-tint:#FFA35C;
   --coral-soft:#FDEDEB; --navy-soft:#EFEEF5;
-  --cream:#FAF9F6; --card:#FFFFFF;
-  --muted:#7472A0; --border:rgba(31,27,86,0.12);
+  --cream:#F7F5F0; --card:#FFFFFF;
+  --muted:#7472A0; --border:rgba(26, 31, 46,0.12);
   --accent:var(--coral);
 }
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
@@ -84,7 +84,7 @@ label.fld{display:block;font-size:12.5px;color:var(--muted);margin:14px 0 6px;fo
 .moderow .lbl{font-size:12px;color:var(--muted);flex:0 0 auto}
 .seg{display:flex;background:var(--navy-soft);border-radius:11px;padding:3px;gap:3px;flex:1}
 .seg button{flex:1;padding:8px 4px;border-radius:9px;font-size:12.5px;font-weight:500;color:var(--muted)}
-.seg button.on{background:var(--card);color:var(--navy);box-shadow:0 1px 3px rgba(31,27,86,.14)}
+.seg button.on{background:var(--card);color:var(--navy);box-shadow:0 1px 3px rgba(26, 31, 46,.14)}
 
 .notice{border-radius:14px;padding:14px 16px;font-size:13.5px;line-height:1.6;margin-bottom:14px;background:var(--coral-soft);color:var(--navy);border-left:3px solid var(--coral)}
 .notice.calm{background:var(--navy-soft);border-left-color:var(--muted);color:var(--muted)}
@@ -113,14 +113,14 @@ label.fld{display:block;font-size:12.5px;color:var(--muted);margin:14px 0 6px;fo
 .tg:last-child{border-bottom:none}
 .tg .lab{font-size:14.5px;font-weight:500}
 .tg .hint{font-size:12.5px;color:var(--muted);margin-top:4px;line-height:1.5}
-.sw{width:48px;height:28px;border-radius:14px;background:rgba(31,27,86,.16);position:relative;flex:0 0 48px;transition:background .18s;margin-top:2px}
+.sw{width:48px;height:28px;border-radius:14px;background:rgba(26, 31, 46,.16);position:relative;flex:0 0 48px;transition:background .18s;margin-top:2px}
 .sw::after{content:'';position:absolute;top:3px;left:3px;width:22px;height:22px;border-radius:50%;background:#fff;transition:transform .18s;box-shadow:0 1px 3px rgba(0,0,0,.2)}
 .sw.on{background:var(--accent)}
 .sw.on::after{transform:translateX(20px)}
 .more-btn{width:100%;text-align:center;font-size:13.5px;color:var(--muted);font-weight:500;padding:14px}
 
 /* ---- nav ---- */
-nav{position:absolute;bottom:0;left:0;right:0;background:rgba(250,249,246,.95);backdrop-filter:blur(14px);border-top:1px solid var(--border);display:flex;padding:9px 6px calc(env(safe-area-inset-bottom,0px) + 9px)}
+nav{position:absolute;bottom:0;left:0;right:0;background:rgba(247, 245, 240,.95);backdrop-filter:blur(14px);border-top:1px solid var(--border);display:flex;padding:9px 6px calc(env(safe-area-inset-bottom,0px) + 9px)}
 nav button{flex:1;display:flex;flex-direction:column;align-items:center;gap:5px;color:var(--muted);font-size:11px;font-weight:500;padding:3px 0}
 nav button svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
 nav button.on{color:var(--accent)}
@@ -151,16 +151,16 @@ nav button.on{color:var(--accent)}
 #quiz .qopt.on{background:var(--coral);border-color:var(--coral)}
 #quiz .qrow{display:flex;gap:10px;margin-top:22px}
 #quiz .qrow .btn{flex:1}
-#quiz .btn{background:#fff;color:#1F1B56}
+#quiz .btn{background:#fff;color:#1A1F2E}
 #quiz .btn:disabled{opacity:.35}
 #quiz .btn.ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.25)}
 #quiz .skip{width:100%;text-align:center;font-size:13px;opacity:.55;color:#fff;padding:16px 0 0}
-#auth{position:fixed;inset:0;z-index:965;background:rgba(31,27,86,.5);display:flex;align-items:center;justify-content:center;padding:22px;overflow-y:auto}
+#auth{position:fixed;inset:0;z-index:965;background:rgba(26, 31, 46,.5);display:flex;align-items:center;justify-content:center;padding:22px;overflow-y:auto}
 #auth[hidden]{display:none!important}
-#auth .sheetCard{background:var(--card);border-radius:20px;padding:24px;width:100%;max-width:380px;box-shadow:0 18px 50px rgba(31,27,86,.3)}
+#auth .sheetCard{background:var(--card);border-radius:20px;padding:24px;width:100%;max-width:380px;box-shadow:0 18px 50px rgba(26, 31, 46,.3)}
 #auth h2{font-size:19px;margin-bottom:4px}
-#sheet{position:fixed;inset:0;z-index:960;background:rgba(31,27,86,.5);display:flex;align-items:center;justify-content:center;padding:22px}
-#sheet .sheetCard{background:var(--card);border-radius:20px;padding:22px;width:100%;max-width:380px;box-shadow:0 18px 50px rgba(31,27,86,.3)}
+#sheet{position:fixed;inset:0;z-index:960;background:rgba(26, 31, 46,.5);display:flex;align-items:center;justify-content:center;padding:22px}
+#sheet .sheetCard{background:var(--card);border-radius:20px;padding:22px;width:100%;max-width:380px;box-shadow:0 18px 50px rgba(26, 31, 46,.3)}
 #sheet h2{font-size:17px}
 #sheet .row{margin-top:18px}
 
@@ -168,7 +168,7 @@ nav button.on{color:var(--accent)}
   :root:not([data-theme="light"]){
     color-scheme:dark;
     --cream:#141233; --card:#1C1A42; --navy:#F4F3FA; --muted:#9A98C4;
-    --border:rgba(255,255,255,.12); --coral:#FF6A5F; --coral-tint:#F3A79E;
+    --border:rgba(255,255,255,.12); --coral:#FF6A5F; --coral-tint:#FFA35C;
     --coral-soft:rgba(255,106,95,.15); --navy-soft:rgba(255,255,255,.07);
   }
   :root:not([data-theme="light"]) nav{background:rgba(20,18,51,.95)}
@@ -180,7 +180,7 @@ nav button.on{color:var(--accent)}
 :root[data-theme="dark"]{
   color-scheme:dark;
   --cream:#141233; --card:#1C1A42; --navy:#F4F3FA; --muted:#9A98C4;
-  --border:rgba(255,255,255,.12); --coral:#FF6A5F; --coral-tint:#F3A79E;
+  --border:rgba(255,255,255,.12); --coral:#FF6A5F; --coral-tint:#FFA35C;
   --coral-soft:rgba(255,106,95,.15); --navy-soft:rgba(255,255,255,.07);
 }
 :root[data-theme="dark"] nav{background:rgba(20,18,51,.95)}
@@ -195,9 +195,9 @@ nav button.on{color:var(--accent)}
 <div id="shell">
   <header class="top">
     <svg width="20" height="22" viewBox="0 0 60 70" aria-hidden="true" style="flex:0 0 auto">
-      <path d="M14 8 L26 8 L19 62 L7 62 Z" fill="#F3A79E"/>
-      <path d="M30 8 L42 8 L35 62 L23 62 Z" fill="#EE6E64"/>
-      <path d="M46 8 L58 8 L51 62 L39 62 Z" fill="#EB4137"/>
+      <path d="M14 8 L26 8 L19 62 L7 62 Z" fill="#FFA35C"/>
+      <path d="M30 8 L42 8 L35 62 L23 62 Z" fill="#FF9440"/>
+      <path d="M46 8 L58 8 L51 62 L39 62 Z" fill="#FF7A1A"/>
     </svg>
     <div style="min-width:0">
       <h1 id="hTitle">Today</h1>
@@ -1430,7 +1430,7 @@ document.addEventListener('keydown',function(e){
     '#pairCard .wishrow{display:flex;gap:10px;align-items:center;padding:11px 0;border-bottom:1px solid rgba(0,0,0,.08)}'+
     '#pairCard .wishrow.done span{text-decoration:line-through;opacity:.5}'+
     '#pairCard .wtick{width:26px;height:26px;min-width:26px;border-radius:50%;border:2px solid #D4402F;background:transparent;cursor:pointer;color:#D4402F;font-size:14px;line-height:1}'+
-    '#theirMoodCard .moodcard{background:#1F1B56;color:#fff;border-radius:18px;padding:18px;margin-bottom:14px}'+
+    '#theirMoodCard .moodcard{background:#1A1F2E;color:#fff;border-radius:18px;padding:18px;margin-bottom:14px}'+
     '#theirMoodCard .mc-t{font-size:11px;letter-spacing:.09em;text-transform:uppercase;opacity:.65}'+
     '#theirMoodCard .mc-m{font-size:19px;font-weight:700;margin-top:5px}'+
     '#theirMoodCard .mc-h{font-size:14px;opacity:.85;margin-top:7px;line-height:1.5}';
@@ -1469,7 +1469,7 @@ document.addEventListener('keydown',function(e){
 .back-apps{display:block;text-align:center;margin:26px auto calc(env(safe-area-inset-bottom,0px) + 20px);
   padding:20px 13px 13px;color:#6F6A94;font-size:14px;text-decoration:none;
   border-top:1px solid rgba(0,0,0,.08);min-height:44px}
-.back-apps:active{color:#EB4137}
+.back-apps:active{color:#FF7A1A}
 </style>
 
 <script>
@@ -1564,14 +1564,14 @@ document.addEventListener('keydown',function(e){
 })();
 </script>
 <style>
-.pwreset-wrap{position:fixed;inset:0;z-index:9999;background:#1F1B56;display:flex;align-items:center;justify-content:center;
+.pwreset-wrap{position:fixed;inset:0;z-index:9999;background:#1A1F2E;display:flex;align-items:center;justify-content:center;
   padding:calc(env(safe-area-inset-top,0px) + 24px) 20px calc(env(safe-area-inset-bottom,0px) + 24px);overflow-y:auto}
 .pwreset-card{background:#fff;border-radius:20px;padding:26px 22px;max-width:380px;width:100%}
-.pwreset-card h2{color:#1F1B56;font-size:22px;margin:0 0 6px}
+.pwreset-card h2{color:#1A1F2E;font-size:22px;margin:0 0 6px}
 .pwreset-card p{color:#6F6A94;font-size:14px;margin:0 0 18px;line-height:1.5}
 .pwreset-card input{width:100%;padding:13px 14px;margin-bottom:9px;border-radius:11px;border:1.5px solid #E4E1EF;
-  background:#FAF9FD;color:#1F1B56;font:inherit;font-size:15px;min-height:46px;box-sizing:border-box}
-.pwreset-card button{width:100%;padding:13px;border:0;border-radius:11px;background:#EB4137;color:#fff;
+  background:#FAF9FD;color:#1A1F2E;font:inherit;font-size:15px;min-height:46px;box-sizing:border-box}
+.pwreset-card button{width:100%;padding:13px;border:0;border-radius:11px;background:#FF7A1A;color:#fff;
   font:inherit;font-size:15px;font-weight:700;min-height:48px;cursor:pointer}
 .pwreset-err{color:#C62828;font-size:13px;min-height:18px;margin:2px 0 6px}
 .auth-note-warn{background:#FFF4E5;border:1px solid #F0C98A;border-radius:12px;padding:12px 14px;margin-bottom:14px;text-align:left}
@@ -1602,13 +1602,13 @@ document.addEventListener('keydown',function(e){
   top:calc(env(safe-area-inset-top,0px) + 10px);
   right:calc(env(safe-area-inset-right,0px) + 12px);
   gap:3px;align-items:center;justify-content:center;
-  padding:11px 12px;border-radius:999px;background:rgba(31,27,86,.07);
+  padding:11px 12px;border-radius:999px;background:rgba(26, 31, 46,.07);
   text-decoration:none;min-height:44px;min-width:44px;box-sizing:border-box}
 #appSwitch i{display:block;width:4px;height:15px;border-radius:1px;transform:skewX(-14deg)}
-#appSwitch i:nth-child(1){background:#F3A79E}
-#appSwitch i:nth-child(2){background:#EE6E64}
-#appSwitch i:nth-child(3){background:#EB4137}
-#appSwitch:active{background:rgba(31,27,86,.14)}
+#appSwitch i:nth-child(1){background:#FFA35C}
+#appSwitch i:nth-child(2){background:#FF9440}
+#appSwitch i:nth-child(3){background:#FF7A1A}
+#appSwitch:active{background:rgba(26, 31, 46,.14)}
 </style>
 <script>
 /* Only offer Google where Google can actually finish.
@@ -1699,9 +1699,9 @@ document.addEventListener('keydown',function(e){
 </script>
 <style>
 .calm-line{display:block;margin:22px 0 6px;padding:15px 17px;border-radius:14px;
-  background:rgba(31,27,86,.05);border-left:3px solid #EE6E64}
+  background:rgba(26, 31, 46,.05);border-left:3px solid #FF9440}
 .calm-label{display:block;font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:#8A85AD;margin-bottom:6px}
-.calm-text{display:block;font-size:16px;line-height:1.5;color:#1F1B56}
+.calm-text{display:block;font-size:16px;line-height:1.5;color:#1A1F2E}
 </style>
 <script>
 /* One question a week
@@ -1844,14 +1844,14 @@ document.addEventListener('keydown',function(e){
 })();
 </script>
 <style>
-.weekq{border-left:3px solid #1F1B56}
+.weekq{border-left:3px solid #1A1F2E}
 .wq-q{font-size:18px;line-height:1.4;margin:4px 0 8px}
 .wq-in{width:100%;padding:12px 14px;border-radius:11px;border:1.5px solid #E4E1EF;background:#FAF9FD;
-  color:#1F1B56;font:inherit;font-size:15px;resize:vertical;box-sizing:border-box;margin-bottom:10px}
+  color:#1A1F2E;font:inherit;font-size:15px;resize:vertical;box-sizing:border-box;margin-bottom:10px}
 .wq-pair{padding:11px 0;border-top:1px solid rgba(0,0,0,.07)}
 .wq-pair p{margin:3px 0 0;font-size:15.5px;line-height:1.5}
 .wq-who{font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:#8A85AD}
-.wq-them .wq-who{color:#EB4137}
+.wq-them .wq-who{color:#FF7A1A}
 .wq-wait{margin-top:10px;font-size:13.5px}
 .wq-err{color:#C62828;font-size:13px;min-height:16px}
 </style>
@@ -1960,13 +1960,13 @@ document.addEventListener('keydown',function(e){
 })();
 </script>
 <style>
-.reap-wrap{position:fixed;inset:0;z-index:9000;background:#1F1B56;display:flex;align-items:center;justify-content:center;
+.reap-wrap{position:fixed;inset:0;z-index:9000;background:#1A1F2E;display:flex;align-items:center;justify-content:center;
   padding:calc(env(safe-area-inset-top,0px) + 20px) 18px calc(env(safe-area-inset-bottom,0px) + 20px);overflow-y:auto}
 .reap-card{background:#fff;border-radius:20px;padding:26px 22px;max-width:420px;width:100%}
-.reap-card h2{color:#1F1B56;font-size:21px;line-height:1.3;margin:4px 0 10px}
+.reap-card h2{color:#1A1F2E;font-size:21px;line-height:1.3;margin:4px 0 10px}
 .reap-lead{color:#4A4570;font-size:15px;line-height:1.6;margin:0 0 16px}
 .reap-in{width:100%;padding:13px 14px;border-radius:12px;border:1.5px solid #E4E1EF;background:#FAF9FD;
-  color:#1F1B56;font:inherit;font-size:15.5px;line-height:1.55;resize:vertical;box-sizing:border-box;margin-bottom:12px}
+  color:#1A1F2E;font:inherit;font-size:15.5px;line-height:1.55;resize:vertical;box-sizing:border-box;margin-bottom:12px}
 .reap-note{color:#8A85AD;font-size:13px;line-height:1.5;margin:0 0 16px}
 .reap-later{margin-top:6px}
 </style>
@@ -1977,12 +1977,12 @@ document.addEventListener('keydown',function(e){
    unreadable. It is the only screen that used a flipping variable as a dark
    background; the overlays added later use a fixed colour.
    Pinned to the real navy, in both schemes. */
-#quiz{ background:#1F1B56 !important; color:#fff !important; }
+#quiz{ background:#1A1F2E !important; color:#fff !important; }
 #quiz h1, #quiz h2, #quiz h3, #quiz p, #quiz label, #quiz span{ color:#fff; }
 #quiz .muted, #quiz .eyebrow{ color:rgba(255,255,255,.62); }
 #quiz button{ color:#fff; }
 #quiz .q-opt, #quiz .opt{ background:rgba(255,255,255,.08); border-color:rgba(255,255,255,.22); color:#fff; }
-#quiz .q-opt.on, #quiz .opt.on{ background:#EB4137; border-color:#EB4137; }
+#quiz .q-opt.on, #quiz .opt.on{ background:#FF7A1A; border-color:#FF7A1A; }
 </style>
 <script>
 /* The sign-in sheet never blocked anybody — it opens on a tap and the app
@@ -2022,7 +2022,7 @@ document.addEventListener('keydown',function(e){
 <style>
 .au-skip{display:block;width:100%;margin-top:14px;padding:13px;border:0;border-radius:11px;background:transparent;
   color:#6F6A94;font:inherit;font-size:14px;cursor:pointer;min-height:44px;text-decoration:underline}
-.au-skip:active{color:#EB4137}
+.au-skip:active{color:#FF7A1A}
 #auSub{line-height:1.55}
 </style>
 <style>
@@ -2036,13 +2036,13 @@ document.addEventListener('keydown',function(e){
 
    I fixed #quiz for this earlier and did not check what else shared the
    pattern. These are pinned to the real colour in both schemes. */
-#welcome, #lock, #quiz { background:#1F1B56 !important; color:#fff !important; }
+#welcome, #lock, #quiz { background:#1A1F2E !important; color:#fff !important; }
 #welcome h1, #welcome h2, #welcome p, #lock h1, #lock h2, #lock p { color:#fff; }
 #welcome .muted, #lock .muted { color:rgba(255,255,255,.66); }
 
-#toast { background:#1F1B56 !important; color:#fff !important; }
+#toast { background:#1A1F2E !important; color:#fff !important; }
 
-.btn { background:#EB4137 !important; color:#fff !important; }
+.btn { background:#FF7A1A !important; color:#fff !important; }
 .btn.quiet { background:transparent !important; color:inherit !important; }
 .btn:disabled { opacity:.55; }
 </style>
@@ -2094,7 +2094,7 @@ document.addEventListener('keydown',function(e){
    gets something. The subject names the app, and the body starts them off
    rather than leaving a blank page. */
 (function(){
-  var TO = 'office.kolishema@gmail.com';
+  var TO = 'momezei@gmail.com';
   var APP = 'Happy Husband';
   var HOST = 'v-settings';
 
@@ -2248,5 +2248,59 @@ document.addEventListener('keydown',function(e){
   document.addEventListener('click', function(){ setTimeout(strip, 200); }, true);
   setTimeout(strip, 1800);
 })();
-</script></body>
+</script><style>
+/* The Mezay rules the first pass missed.
+
+   Swapping the four variables got the broad look right but skipped the
+   details the brand actually specifies. The important one is contrast:
+   tangerine on paper FAILS for text. The streak screen had orange numerals
+   on white cards, which is exactly that failure. Tangerine-family text on a
+   light background is rust; tangerine stays on shapes, rules and buttons.
+
+   Also added: sand for borders and inputs, white for cards sitting on paper,
+   ink tint for dividers, tangerine tint with rust for badges, ink light for
+   cards on an ink background. */
+:root{
+  --mm-ink:#1A1F2E; --mm-ink-light:#2C3448; --mm-ink-muted:#A3A9B5;
+  --mm-ink-tint:#E3E5EA; --mm-tangerine:#FF7A1A; --mm-tangerine-dark:#C95A00;
+  --mm-tangerine-light:#FFA35C; --mm-tangerine-tint:#FFE6D1;
+  --mm-rust:#8A3E00; --mm-paper:#F7F5F0; --mm-sand:#E8E4DB; --mm-slate:#5F6675;
+}
+
+/* tangerine-family TEXT on light must be rust, never #FF7A1A */
+.stat-num, .statNum, .big-num, .count, .num,
+.card .accent, .accent-text, .streak-num{
+  color:#8A3E00 !important;
+}
+
+/* cards on paper are white, with sand borders */
+.card{ background:#fff !important; border-color:#E8E4DB !important; }
+input, textarea, select{
+  background:#fff !important;
+  border-color:#E8E4DB !important;
+  color:#1A1F2E !important;
+}
+hr, .divider{ border-color:#E3E5EA !important; background:#E3E5EA !important; }
+
+/* cards sitting on an ink panel */
+.on-ink .card, .dark .card{ background:#2C3448 !important; border-color:rgba(255,255,255,.1) !important; }
+
+/* badges: tangerine tint with rust text */
+.badge, .pill, .tag{ background:#FFE6D1 !important; color:#8A3E00 !important; }
+
+/* buttons: tangerine fill, ink text, darker on press */
+.btn{ background:#FF7A1A !important; color:#1A1F2E !important; }
+.btn:active{ background:#C95A00 !important; }
+.btn.quiet{ background:transparent !important; color:inherit !important; }
+
+@media (prefers-color-scheme: dark){
+  .card{ background:#2C3448 !important; border-color:rgba(255,255,255,.12) !important; }
+  input, textarea, select{ background:#2C3448 !important; border-color:rgba(255,255,255,.16) !important; color:#F2F1EE !important; }
+  /* on ink, tangerine passes — rust would be too dark */
+  .stat-num, .statNum, .big-num, .count, .num,
+  .card .accent, .accent-text, .streak-num{ color:#FF7A1A !important; }
+  .badge, .pill, .tag{ background:rgba(255,122,26,.18) !important; color:#FFA35C !important; }
+}
+</style>
+</body>
 </html>
