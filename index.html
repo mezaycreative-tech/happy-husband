@@ -189,6 +189,64 @@ nav button.on{color:var(--accent)}
 :root[data-theme="dark"] .pill.me{color:#C3C1E6}
 :root[data-theme="dark"] #lock,:root[data-theme="dark"] #welcome{background:#0E0C26}
 </style>
+<script>
+/* Carrying people's data to the new address.
+
+   Everything saved without an account lives in localStorage, which is tied
+   to the origin. Moving from kolishema.github.io to happyrelationships.app
+   means the new site cannot see any of it — habits, streak, notes would all
+   look empty to the people already using this.
+
+   So the OLD page does the reading. Anyone who opens an old link gets their
+   storage packed into the URL fragment and is sent across; the new page
+   unpacks it on arrival and only fills in keys it does not already have, so
+   nothing already on the new side is ever overwritten. The fragment stays in
+   the browser and is never sent to any server.
+
+   One thing this cannot carry: push subscriptions are tied to the origin and
+   have to be set up again. */
+(function(){
+  var OLD  = 'kolishema.github.io';
+  var NEW  = 'https://happyrelationships.app';
+  var PATH = { 'happy-wife-app':'/happy-wife/', 'HappyMarriage':'/happy-husband/', 'HappyChildren':'/happy-children/' };
+  var FLAG = 'hr-migrated';
+
+  function packAndGo(){
+    if (location.hostname !== OLD) return;
+    var seg = location.pathname.split('/').filter(Boolean)[0] || '';
+    var dest = PATH[seg] || '/';
+    var bag = {};
+    try {
+      for (var i = 0; i < localStorage.length; i++) {
+        var k = localStorage.key(i);
+        if (k === FLAG) continue;
+        bag[k] = localStorage.getItem(k);
+      }
+    } catch(e){}
+    var frag = '';
+    try { frag = '#hrdata=' + encodeURIComponent(btoa(unescape(encodeURIComponent(JSON.stringify(bag))))); } catch(e){ frag = ''; }
+    location.replace(NEW + dest + frag);
+  }
+
+  function unpack(){
+    if (location.hostname === OLD) return;
+    var m = location.hash.match(/hrdata=([^&]+)/);
+    if (!m) return;
+    try {
+      var bag = JSON.parse(decodeURIComponent(escape(atob(decodeURIComponent(m[1])))));
+      Object.keys(bag).forEach(function(k){
+        /* never overwrite anything already here */
+        if (localStorage.getItem(k) === null) localStorage.setItem(k, bag[k]);
+      });
+      localStorage.setItem(FLAG, new Date().toISOString().slice(0,10));
+    } catch(e){}
+    try { history.replaceState(null, '', location.pathname + location.search); } catch(e){}
+    location.reload();
+  }
+
+  if (location.hostname === OLD) packAndGo(); else unpack();
+})();
+</script>
 </head>
 <body>
 
