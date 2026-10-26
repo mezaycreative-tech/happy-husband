@@ -247,6 +247,33 @@ nav button.on{color:var(--accent)}
   if (location.hostname === OLD) packAndGo(); else unpack();
 })();
 </script>
+<script>
+/* Pick up anything carried over from the old address.
+
+   The forwarding page at the old kolishema.github.io path reads that
+   origin storage and passes it in the URL fragment. This imports any key
+   not already here, then clears the fragment so a refresh or a shared link
+   does not carry it again.
+
+   Never overwrites: somebody who already started fresh on this domain keeps
+   what they have. Runs in the head, before the app reads storage. */
+(function(){
+  try {
+    var m = location.hash.match(/[#&]carry=([^&]+)/);
+    if (!m) return;
+    var raw = decodeURIComponent(escape(atob(decodeURIComponent(m[1]))));
+    var data = JSON.parse(raw);
+    var added = 0;
+    Object.keys(data).forEach(function(k){
+      if (localStorage.getItem(k) === null) { localStorage.setItem(k, data[k]); added++; }
+    });
+    history.replaceState(null, "", location.pathname + location.search);
+    if (added) location.reload();
+  } catch (e) {
+    try { history.replaceState(null, "", location.pathname + location.search); } catch (e2) {}
+  }
+})();
+</script>
 </head>
 <body>
 
