@@ -1295,6 +1295,18 @@ function signOut(){
   sb.auth.signOut().then(function(){ user=null; renderSettings(); toast('Signed out. Everything is still on this device.'); });
 }
 
+function deleteAccount(){
+  if(!sb||!user) return;
+  if(!confirm('Delete your account?\n\nThis removes your synced data and shared mood permanently. It cannot be undone.')) return;
+  if(!confirm('Last check: this is permanent. Delete everything?')) return;
+  var uid=user.id;
+  Promise.resolve(sb.from(SYNC_TABLE).delete().eq('user_id',uid)).catch(function(){})
+  .then(function(){ return sb.from('shared_state').delete().eq('user_id',uid); }).catch(function(){})
+  .then(function(){ return sb.rpc('delete_own_account'); }).catch(function(){})
+  .then(function(){ return sb.auth.signOut(); })
+  .then(function(){ user=null; renderSettings(); toast('Your account and synced data were deleted. To remove the login record itself, email mezaycreative@gmail.com.'); })
+  .catch(function(){ toast('Could not delete. Try again or email mezaycreative@gmail.com.'); });
+}
 function renderSync(){
   const el=document.getElementById('syncCard'); if(!el) return;
   if(!syncConfigured()){
@@ -1309,7 +1321,7 @@ function renderSync(){
   el.innerHTML='<div class="tg" style="padding-top:0"><div><div class="lab">'+esc(user.email||'Signed in')+'</div>'+
     '<div class="hint">'+(syncing?'Syncing…':'Everything here is backed up.')+'</div></div></div>'+
     '<div class="row" style="margin-top:12px"><button class="btn ghost sm" onclick="pullCloud()">Sync now</button>'+
-    '<button class="btn ghost sm" onclick="signOut()">Sign out</button></div>';
+    '<button class="btn ghost sm" onclick="signOut()">Sign out</button><button class="btn ghost sm" onclick="deleteAccount()">Delete my account</button></div>';
 }
 
 /* ============================================================
